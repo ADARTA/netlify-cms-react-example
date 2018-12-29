@@ -2,16 +2,20 @@
   "name": "netlify-cms-react-example",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "2.1.2"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "echo \"react-scripts eject\""
+  },
+  "dependencies": {
+    "netlify-cms": "^2.3.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.2"
+  },
+  "devDependencies": {
+    "netlify-cms-backend-fs": "^0.2.2"
   },
   "eslintConfig": {
     "extends": "react-app"
