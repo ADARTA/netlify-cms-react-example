@@ -19,6 +19,13 @@ class App extends Component {
           >
             Learn React
           </a>
+          <a
+            className="App-link"
+            href="/admin"
+            target="_self"
+          >
+            Netlify CMS
+          </a>
         </header>
       </div>
     );
