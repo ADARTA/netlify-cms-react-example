@@ -15,7 +15,7 @@
     "react-scripts": "2.1.2"
   },
   "devDependencies": {
-    "netlify-cms-backend-fs": "^0.3.2"
+    "netlify-cms-backend-fs": "^0.3.3"
   },
   "eslintConfig": {
     "extends": "react-app"
