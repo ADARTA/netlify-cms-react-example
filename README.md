@@ -34,6 +34,14 @@ $ yarn add netlify-cms-backend-fs --dev
 
 Test the API endpoint by starting the development server using `npm run start` or `yarn start`. The proxy api will give you a message telling you the root and site path in the terminal. Browsing to `http://localhost:3000/api` will confirm the API is up and running by returning a json error object letting you know it is the root of the api.
 
+### Creating your custom CMS application
+
+This starter can be the beginning custom CMS or we can use this as a test for an existing NetlifyCMS configuration. Just clone the repository or download.
+
+```bash
+$ yarn install
+$ yarn start
+```
 
 ## Learn More
 

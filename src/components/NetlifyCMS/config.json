@@ -1,0 +1,58 @@
+{
+  "backend": {
+    "name": "test-repo"
+  },
+  "display_url": "https://netlify-cms-react-example.netlify.com",
+  "media_folder": "public/assets/media",
+  "public_folder": "/assets/media",
+  "collections": [{
+    "name": "settings",
+    "label": "Settings",
+    "files": [{
+      "file": "public/manifest.json",
+      "name": "manifest",
+      "label": "Site Manifest",
+      "fields": [{
+          "name": "name",
+          "label": "Application Name",
+          "widget": "string"
+        },
+        {
+          "name": "short_name",
+          "label": "Short Name",
+          "widget": "string"
+        },
+        {
+          "name": "start_url",
+          "label": "Start URL",
+          "widget": "string"
+        },
+        {
+          "name": "display",
+          "label": "display",
+          "widget": "string"
+        },
+        {
+          "name": "theme_color",
+          "label": "Theme Color",
+          "widget": "string"
+        },
+        {
+          "name": "background_color",
+          "label": "Background Color",
+          "widget": "string"
+        },
+        {
+          "name": "icons",
+          "label": "Icons",
+          "widget": "list",
+          "fields": [
+            {"name": "src", "label": "Source (src)", "widget": "string"},
+            {"name": "sizes", "label": "Sizes (sizes)", "widget": "string"},
+            {"name": "type", "label": "Type (typep)", "widget": "string"}
+          ]
+        }
+      ]
+    }]
+  }]
+}
