@@ -42,9 +42,9 @@
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
-    "react-immutable-proptypes": "^2.1.0",
     "react-dom": "^16.8.4",
-    "react-scripts": "^2.1.2",
+    "react-immutable-proptypes": "^2.1.0",
+    "react-scripts": "^2.1.8",
     "uuid": "3.3.2"
   },
   "devDependencies": {
@@ -54,9 +54,12 @@
     "extends": "react-app"
   },
   "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
+    "last 2 Chrome versions",
+    "last 2 Opera versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Safari versions",
+    "last 2 iOS versions",
+    "last 2 ChromeAndroid versions"
   ]
 }
