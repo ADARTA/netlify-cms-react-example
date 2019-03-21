@@ -4,6 +4,7 @@ import CMS from './cms';
 import previewStyles from './components/previewStyles';
 import PostPreview from './components/PostPreview';
 import AuthorsPreview from './components/AuthorsPreview';
+import GeneralPreview from './components/GeneralPreview';
 
 import config from './config.json';
 
@@ -21,6 +22,7 @@ const NetlifyCMS = () => {
     CMS.registerPreviewTemplate("posts", PostPreview);
     CMS.registerPreviewStyle(previewStyles, { raw: true });
     CMS.registerPreviewTemplate("authors", AuthorsPreview);
+    CMS.registerPreviewTemplate("general", GeneralPreview);
     CMS.init({config})
   })
 
