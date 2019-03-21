@@ -5,6 +5,7 @@ import previewStyles from './components/previewStyles';
 import PostPreview from './components/PostPreview';
 import AuthorsPreview from './components/AuthorsPreview';
 import GeneralPreview from './components/GeneralPreview';
+import EditorYoutube from './components/EditorYoutube';
 import RelationKitchenSinkPostPreview from './components/RelationKitchenSinkPostPreview';
 
 import config from './config.json';
@@ -24,6 +25,7 @@ const NetlifyCMS = () => {
     CMS.registerPreviewStyle(previewStyles, { raw: true });
     CMS.registerPreviewTemplate("authors", AuthorsPreview);
     CMS.registerPreviewTemplate("general", GeneralPreview);
+    CMS.registerEditorComponent(EditorYoutube);
     CMS.registerWidget("relationKitchenSinkPost", "relation", RelationKitchenSinkPostPreview);
 
     CMS.init({config})
