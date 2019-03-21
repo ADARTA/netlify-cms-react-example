@@ -1,58 +1,609 @@
 {
   "backend": {
-    "name": "test-repo"
+    "name": "github",
+    "repo": "talves/netlify-cms-react-example",
+    "branch": "master"
   },
   "display_url": "https://netlify-cms-react-example.netlify.com",
-  "media_folder": "public/assets/media",
-  "public_folder": "/assets/media",
-  "collections": [{
-    "name": "settings",
-    "label": "Settings",
-    "files": [{
-      "file": "public/manifest.json",
-      "name": "manifest",
-      "label": "Site Manifest",
-      "fields": [{
-          "name": "name",
-          "label": "Application Name",
-          "widget": "string"
+  "media_folder": "public/assets/uploads",
+  "public_folder": "/assets/uploads",
+  "collections": [
+    {
+      "name": "posts",
+      "label": "Post",
+      "description": "The description is a great place for tone setting, high level information, and editing guidelines that are specific to a collection.\n",
+      "folder": "public/_posts",
+      "slug": "{{year}}-{{month}}-{{day}}-{{slug}}",
+      "create": true,
+      "fields": [
+        {
+          "label": "Title",
+          "name": "title",
+          "widget": "string",
+          "tagname": "h1"
         },
         {
-          "name": "short_name",
-          "label": "Short Name",
-          "widget": "string"
+          "label": "Publish Date",
+          "name": "date",
+          "widget": "datetime",
+          "format": "YYYY-MM-DD hh:mma"
         },
         {
-          "name": "start_url",
-          "label": "Start URL",
-          "widget": "string"
+          "label": "Cover Image",
+          "name": "image",
+          "widget": "image",
+          "required": false,
+          "tagname": ""
         },
         {
-          "name": "display",
-          "label": "display",
-          "widget": "string"
+          "label": "Body",
+          "name": "body",
+          "widget": "markdown"
+        }
+      ],
+      "meta": [
+        {
+          "label": "SEO Description",
+          "name": "description",
+          "widget": "text"
+        }
+      ]
+    },
+    {
+      "name": "faq",
+      "label": "FAQ",
+      "folder": "public/_faqs",
+      "create": true,
+      "fields": [
+        {
+          "label": "Question",
+          "name": "title",
+          "widget": "string",
+          "tagname": "h1"
         },
         {
-          "name": "theme_color",
-          "label": "Theme Color",
-          "widget": "string"
+          "label": "Answer",
+          "name": "body",
+          "widget": "markdown"
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "label": "Settings",
+      "delete": false,
+      "editor": {
+        "preview": false
+      },
+      "files": [
+        {
+          "file": "public/manifest.json",
+          "name": "manifest",
+          "label": "Site Manifest",
+          "fields": [{
+              "name": "name",
+              "label": "Application Name",
+              "widget": "string"
+            },
+            {
+              "name": "short_name",
+              "label": "Short Name",
+              "widget": "string"
+            },
+            {
+              "name": "start_url",
+              "label": "Start URL",
+              "widget": "string"
+            },
+            {
+              "name": "display",
+              "label": "display",
+              "widget": "string"
+            },
+            {
+              "name": "theme_color",
+              "label": "Theme Color",
+              "widget": "string"
+            },
+            {
+              "name": "background_color",
+              "label": "Background Color",
+              "widget": "string"
+            },
+            {
+              "name": "icons",
+              "label": "Icons",
+              "widget": "list",
+              "fields": [
+                {"name": "src", "label": "Source (src)", "widget": "string"},
+                {"name": "sizes", "label": "Sizes (sizes)", "widget": "string"},
+                {"name": "type", "label": "Type (typep)", "widget": "string"}
+              ]
+            }
+          ]
         },
         {
-          "name": "background_color",
-          "label": "Background Color",
-          "widget": "string"
-        },
-        {
-          "name": "icons",
-          "label": "Icons",
-          "widget": "list",
+          "name": "general",
+          "label": "Site Settings",
+          "file": "public/_data/settings.json",
+          "description": "General Site Settings",
           "fields": [
-            {"name": "src", "label": "Source (src)", "widget": "string"},
-            {"name": "sizes", "label": "Sizes (sizes)", "widget": "string"},
-            {"name": "type", "label": "Type (typep)", "widget": "string"}
+            {
+              "label": "Global title",
+              "name": "site_title",
+              "widget": "string"
+            },
+            {
+              "label": "Post Settings",
+              "name": "posts",
+              "widget": "object",
+              "fields": [
+                {
+                  "label": "Number of posts on frontpage",
+                  "name": "front_limit",
+                  "widget": "number"
+                },
+                {
+                  "label": "Default Author",
+                  "name": "author",
+                  "widget": "string"
+                },
+                {
+                  "label": "Default Thumbnail",
+                  "name": "thumb",
+                  "widget": "image",
+                  "class": "thumb"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "authors",
+          "label": "Authors",
+          "file": "public/_data/authors.yml",
+          "description": "Author descriptions",
+          "fields": [
+            {
+              "name": "authors",
+              "label": "Authors",
+              "widget": "list",
+              "fields": [
+                {
+                  "label": "Name",
+                  "name": "name",
+                  "widget": "string"
+                },
+                {
+                  "label": "Description",
+                  "name": "description",
+                  "widget": "markdown"
+                }
+              ]
+            }
           ]
         }
       ]
-    }]
-  }]
+    },
+    {
+      "name": "kitchenSink",
+      "label": "Kitchen Sink",
+      "folder": "public/_sink",
+      "create": true,
+      "fields": [
+        {
+          "label": "Related Post",
+          "name": "post",
+          "widget": "relationKitchenSinkPost",
+          "collection": "posts",
+          "searchFields": [
+            "title",
+            "body"
+          ],
+          "valueField": "title"
+        },
+        {
+          "label": "Title",
+          "name": "title",
+          "widget": "string"
+        },
+        {
+          "label": "Boolean",
+          "name": "boolean",
+          "widget": "boolean",
+          "default": true
+        },
+        {
+          "label": "Text",
+          "name": "text",
+          "widget": "text"
+        },
+        {
+          "label": "Number",
+          "name": "number",
+          "widget": "number"
+        },
+        {
+          "label": "Markdown",
+          "name": "markdown",
+          "widget": "markdown"
+        },
+        {
+          "label": "Datetime",
+          "name": "datetime",
+          "widget": "datetime"
+        },
+        {
+          "label": "Date",
+          "name": "date",
+          "widget": "date"
+        },
+        {
+          "label": "Image",
+          "name": "image",
+          "widget": "image"
+        },
+        {
+          "label": "File",
+          "name": "file",
+          "widget": "file"
+        },
+        {
+          "label": "Select",
+          "name": "select",
+          "widget": "select",
+          "options": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "label": "Hidden",
+          "name": "hidden",
+          "widget": "hidden",
+          "default": "hidden"
+        },
+        {
+          "label": "Object",
+          "name": "object",
+          "widget": "object",
+          "fields": [
+            {
+              "label": "Related Post",
+              "name": "post",
+              "widget": "relationKitchenSinkPost",
+              "collection": "posts",
+              "searchFields": [
+                "title",
+                "body"
+              ],
+              "valueField": "title"
+            },
+            {
+              "label": "String",
+              "name": "string",
+              "widget": "string"
+            },
+            {
+              "label": "Boolean",
+              "name": "boolean",
+              "widget": "boolean",
+              "default": false
+            },
+            {
+              "label": "Text",
+              "name": "text",
+              "widget": "text"
+            },
+            {
+              "label": "Number",
+              "name": "number",
+              "widget": "number"
+            },
+            {
+              "label": "Markdown",
+              "name": "markdown",
+              "widget": "markdown"
+            },
+            {
+              "label": "Datetime",
+              "name": "datetime",
+              "widget": "datetime"
+            },
+            {
+              "label": "Date",
+              "name": "date",
+              "widget": "date"
+            },
+            {
+              "label": "Image",
+              "name": "image",
+              "widget": "image"
+            },
+            {
+              "label": "File",
+              "name": "file",
+              "widget": "file"
+            },
+            {
+              "label": "Select",
+              "name": "select",
+              "widget": "select",
+              "options": [
+                "a",
+                "b",
+                "c"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "List",
+          "name": "list",
+          "widget": "list",
+          "fields": [
+            {
+              "label": "String",
+              "name": "string",
+              "widget": "string"
+            },
+            {
+              "label": "Boolean",
+              "name": "boolean",
+              "widget": "boolean"
+            },
+            {
+              "label": "Text",
+              "name": "text",
+              "widget": "text"
+            },
+            {
+              "label": "Number",
+              "name": "number",
+              "widget": "number"
+            },
+            {
+              "label": "Markdown",
+              "name": "markdown",
+              "widget": "markdown"
+            },
+            {
+              "label": "Datetime",
+              "name": "datetime",
+              "widget": "datetime"
+            },
+            {
+              "label": "Date",
+              "name": "date",
+              "widget": "date"
+            },
+            {
+              "label": "Image",
+              "name": "image",
+              "widget": "image"
+            },
+            {
+              "label": "File",
+              "name": "file",
+              "widget": "file"
+            },
+            {
+              "label": "Select",
+              "name": "select",
+              "widget": "select",
+              "options": [
+                "a",
+                "b",
+                "c"
+              ]
+            },
+            {
+              "label": "Object",
+              "name": "object",
+              "widget": "object",
+              "fields": [
+                {
+                  "label": "String",
+                  "name": "string",
+                  "widget": "string"
+                },
+                {
+                  "label": "Boolean",
+                  "name": "boolean",
+                  "widget": "boolean"
+                },
+                {
+                  "label": "Text",
+                  "name": "text",
+                  "widget": "text"
+                },
+                {
+                  "label": "Number",
+                  "name": "number",
+                  "widget": "number"
+                },
+                {
+                  "label": "Markdown",
+                  "name": "markdown",
+                  "widget": "markdown"
+                },
+                {
+                  "label": "Datetime",
+                  "name": "datetime",
+                  "widget": "datetime"
+                },
+                {
+                  "label": "Date",
+                  "name": "date",
+                  "widget": "date"
+                },
+                {
+                  "label": "Image",
+                  "name": "image",
+                  "widget": "image"
+                },
+                {
+                  "label": "File",
+                  "name": "file",
+                  "widget": "file"
+                },
+                {
+                  "label": "Select",
+                  "name": "select",
+                  "widget": "select",
+                  "options": [
+                    "a",
+                    "b",
+                    "c"
+                  ]
+                },
+                {
+                  "label": "List",
+                  "name": "list",
+                  "widget": "list",
+                  "fields": [
+                    {
+                      "label": "Related Post",
+                      "name": "post",
+                      "widget": "relationKitchenSinkPost",
+                      "collection": "posts",
+                      "searchFields": [
+                        "title",
+                        "body"
+                      ],
+                      "valueField": "title"
+                    },
+                    {
+                      "label": "String",
+                      "name": "string",
+                      "widget": "string"
+                    },
+                    {
+                      "label": "Boolean",
+                      "name": "boolean",
+                      "widget": "boolean"
+                    },
+                    {
+                      "label": "Text",
+                      "name": "text",
+                      "widget": "text"
+                    },
+                    {
+                      "label": "Number",
+                      "name": "number",
+                      "widget": "number"
+                    },
+                    {
+                      "label": "Markdown",
+                      "name": "markdown",
+                      "widget": "markdown"
+                    },
+                    {
+                      "label": "Datetime",
+                      "name": "datetime",
+                      "widget": "datetime"
+                    },
+                    {
+                      "label": "Date",
+                      "name": "date",
+                      "widget": "date"
+                    },
+                    {
+                      "label": "Image",
+                      "name": "image",
+                      "widget": "image"
+                    },
+                    {
+                      "label": "File",
+                      "name": "file",
+                      "widget": "file"
+                    },
+                    {
+                      "label": "Select",
+                      "name": "select",
+                      "widget": "select",
+                      "options": [
+                        "a",
+                        "b",
+                        "c"
+                      ]
+                    },
+                    {
+                      "label": "Hidden",
+                      "name": "hidden",
+                      "widget": "hidden",
+                      "default": "hidden"
+                    },
+                    {
+                      "label": "Object",
+                      "name": "object",
+                      "widget": "object",
+                      "fields": [
+                        {
+                          "label": "String",
+                          "name": "string",
+                          "widget": "string"
+                        },
+                        {
+                          "label": "Boolean",
+                          "name": "boolean",
+                          "widget": "boolean"
+                        },
+                        {
+                          "label": "Text",
+                          "name": "text",
+                          "widget": "text"
+                        },
+                        {
+                          "label": "Number",
+                          "name": "number",
+                          "widget": "number"
+                        },
+                        {
+                          "label": "Markdown",
+                          "name": "markdown",
+                          "widget": "markdown"
+                        },
+                        {
+                          "label": "Datetime",
+                          "name": "datetime",
+                          "widget": "datetime"
+                        },
+                        {
+                          "label": "Date",
+                          "name": "date",
+                          "widget": "date"
+                        },
+                        {
+                          "label": "Image",
+                          "name": "image",
+                          "widget": "image"
+                        },
+                        {
+                          "label": "File",
+                          "name": "file",
+                          "widget": "file"
+                        },
+                        {
+                          "label": "Select",
+                          "name": "select",
+                          "widget": "select",
+                          "options": [
+                            "a",
+                            "b",
+                            "c"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

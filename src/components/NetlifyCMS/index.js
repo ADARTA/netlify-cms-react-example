@@ -1,28 +1,23 @@
-import React, { Component } from 'react';
-import './setup'
-import CMS, { init } from 'netlify-cms';
+import React from 'react';
+import CMS from './cms';
 import config from './config.json';
+import FileSystemBackend from 'netlify-cms-backend-fs';
 
-CMS.init = init;
-
-class NetlifyCMS extends Component {
-  componentDidMount () {
+const NetlifyCMS = () => {
+  React.useEffect(() => {
     console.log(`CMS [${process.env.NODE_ENV}]`, CMS, )
-    const { FileSystemBackend } = require('netlify-cms-backend-fs');
     if (process.env.NODE_ENV === 'development') {
+      config.load_config_file = false
       config.backend = {
         "name": "file-system",
         "api_root": "http://localhost:3000/api"
       }
       CMS.registerBackend('file-system', FileSystemBackend);
     }
-    CMS.init({config});
-  }
-  render() {
-    return (
-      <div id="nc-root" />
-    );
-  }
-}
+    CMS.init({config})
+  })
+
+  return <div id="nc-root" />
+};
 
 export default NetlifyCMS;
