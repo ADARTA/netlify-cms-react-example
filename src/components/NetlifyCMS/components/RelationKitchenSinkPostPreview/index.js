@@ -1,11 +1,17 @@
 import React from "react";
 
 const RelationKitchenSinkPostPreview = ({ value, fieldsMetaData }) => {
-  const [post, setPost] = React.useState(null);
+  const [post, setPost] = React.useState({});
 
   React.useEffect(() => {
-    if (fieldsMetaData) {
-      setPost(fieldsMetaData.getIn(['posts', value]).toJS());
+    const posts = fieldsMetaData.getIn(['posts']);
+    if (!value || !posts) {
+      setPost({})
+    } else {
+      const postsData = posts.getIn([value]).toJS();
+      if (postsData) {
+        setPost(postsData);
+      }
     }
   }, [fieldsMetaData, value]);
 
@@ -14,7 +20,7 @@ const RelationKitchenSinkPostPreview = ({ value, fieldsMetaData }) => {
       <h2>Related Post</h2>
       <h3>{post.title}</h3>
       <img src={post.image} alt={post.title}/>
-      <p>{`${post.body.substr(0, 100)}...`}</p>
+      <p>{`${post.body ? post.body.substr(0, 100) : 'Loading'}...`}</p>
     </div>
 };
 
