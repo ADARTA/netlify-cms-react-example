@@ -10,7 +10,8 @@
   "collections": [
     {
       "name": "posts",
-      "label": "Post",
+      "label": "Posts",
+      "label_singular": "Post",
       "description": "The description is a great place for tone setting, high level information, and editing guidelines that are specific to a collection.\n",
       "folder": "public/_posts",
       "slug": "{{year}}-{{month}}-{{day}}-{{slug}}",
@@ -26,7 +27,9 @@
           "label": "Publish Date",
           "name": "date",
           "widget": "datetime",
-          "format": "YYYY-MM-DD hh:mma"
+          "dateFormat": "YYYY-MM-DD",
+          "timeFormat": "HH:mm",
+          "format": "YYYY-MM-DD HH:mm"
         },
         {
           "label": "Cover Image",
@@ -38,7 +41,8 @@
         {
           "label": "Body",
           "name": "body",
-          "widget": "markdown"
+          "widget": "markdown",
+          "hint": "Main content goes here."
         }
       ],
       "meta": [
@@ -152,7 +156,8 @@
                   "label": "Default Thumbnail",
                   "name": "thumb",
                   "widget": "image",
-                  "class": "thumb"
+                  "class": "thumb",
+                  "required": false
                 }
               ]
             }
@@ -167,12 +172,14 @@
             {
               "name": "authors",
               "label": "Authors",
+              "label_singular": "Author",
               "widget": "list",
               "fields": [
                 {
                   "label": "Name",
                   "name": "name",
-                  "widget": "string"
+                  "widget": "string",
+                  "hint": "First and Last"
                 },
                 {
                   "label": "Description",
@@ -196,6 +203,10 @@
           "name": "post",
           "widget": "relationKitchenSinkPost",
           "collection": "posts",
+          "displayFields": [
+            "title",
+            "date"
+          ],
           "searchFields": [
             "title",
             "body"
@@ -214,14 +225,21 @@
           "default": true
         },
         {
+          "label": "Map",
+          "name": "map",
+          "widget": "map"
+        },
+        {
           "label": "Text",
           "name": "text",
-          "widget": "text"
+          "widget": "text",
+          "hint": "Plain text, not markdown"
         },
         {
           "label": "Number",
           "name": "number",
-          "widget": "number"
+          "widget": "number",
+          "hint": "To infinity and beyond!"
         },
         {
           "label": "Markdown",
@@ -257,6 +275,17 @@
             "b",
             "c"
           ]
+        },
+        {
+          "label": "Select multiple",
+          "name": "select_multiple",
+          "widget": "select",
+          "options": [
+            "a",
+            "b",
+            "c"
+          ],
+          "multiple": true
         },
         {
           "label": "Hidden",
@@ -598,6 +627,89 @@
                       ]
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Typed List",
+          "name": "typed_list",
+          "widget": "list",
+          "types": [
+            {
+              "label": "Type 1 Object",
+              "name": "type_1_object",
+              "widget": "object",
+              "fields": [
+                {
+                  "label": "String",
+                  "name": "string",
+                  "widget": "string"
+                },
+                {
+                  "label": "Boolean",
+                  "name": "boolean",
+                  "widget": "boolean"
+                },
+                {
+                  "label": "Text",
+                  "name": "text",
+                  "widget": "text"
+                }
+              ]
+            },
+            {
+              "label": "Type 2 Object",
+              "name": "type_2_object",
+              "widget": "object",
+              "fields": [
+                {
+                  "label": "Number",
+                  "name": "number",
+                  "widget": "number"
+                },
+                {
+                  "label": "Select",
+                  "name": "select",
+                  "widget": "select",
+                  "options": [
+                    "a",
+                    "b",
+                    "c"
+                  ]
+                },
+                {
+                  "label": "Datetime",
+                  "name": "datetime",
+                  "widget": "datetime"
+                },
+                {
+                  "label": "Markdown",
+                  "name": "markdown",
+                  "widget": "markdown"
+                }
+              ]
+            },
+            {
+              "label": "Type 3 Object",
+              "name": "type_3_object",
+              "widget": "object",
+              "fields": [
+                {
+                  "label": "Date",
+                  "name": "date",
+                  "widget": "date"
+                },
+                {
+                  "label": "Image",
+                  "name": "image",
+                  "widget": "image"
+                },
+                {
+                  "label": "File",
+                  "name": "file",
+                  "widget": "file"
                 }
               ]
             }
