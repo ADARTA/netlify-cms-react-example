@@ -1,6 +1,7 @@
 import React from 'react';
 import FileSystemBackend from 'netlify-cms-backend-fs';
 import CMS from './cms';
+import previewStyles from './components/previewStyles';
 import PostPreview from './components/PostPreview';
 
 import config from './config.json';
@@ -17,6 +18,7 @@ const NetlifyCMS = () => {
       CMS.registerBackend('file-system', FileSystemBackend);
     }
     CMS.registerPreviewTemplate("posts", PostPreview);
+    CMS.registerPreviewStyle(previewStyles, { raw: true });
     CMS.init({config})
   })
 
