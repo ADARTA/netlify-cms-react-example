@@ -3,6 +3,7 @@ import FileSystemBackend from 'netlify-cms-backend-fs';
 import CMS from './cms';
 import previewStyles from './components/previewStyles';
 import PostPreview from './components/PostPreview';
+import AuthorsPreview from './components/AuthorsPreview';
 
 import config from './config.json';
 
@@ -19,6 +20,7 @@ const NetlifyCMS = () => {
     }
     CMS.registerPreviewTemplate("posts", PostPreview);
     CMS.registerPreviewStyle(previewStyles, { raw: true });
+    CMS.registerPreviewTemplate("authors", AuthorsPreview);
     CMS.init({config})
   })
 

@@ -1,22 +1,21 @@
 import React from 'react'
 
-export default class AuthorsPreview extends React.Component {
-  render () {
+const AuthorsPreview = ({ entry }) => {
+  const [data, setData] = React.useState({});
+
+  React.useEffect(() => {
+    setData(entry.getIn(['data']).toJS())
+  }, [entry]);
+
+  return data.authors.map( (author, index) => {
     return (
-      <div>
-        <h1>Authors</h1>
-        {
-          this.props.widgetsFor('authors').map( (author, index) => {
-            return (
-              <div key={ index }>
-                <hr />
-                <strong>{ author.getIn(['data', 'name']) }</strong>
-                { author.getIn(['widgets', 'description']) }
-              </div>
-            )
-          })
-        }
+      <div key={ index }>
+        <hr />
+        <strong>{ author.name }</strong>
+        { author.description }
       </div>
     )
-  }
-}
+  });
+};
+
+export default AuthorsPreview;
