@@ -5,6 +5,7 @@ import previewStyles from './components/previewStyles';
 import PostPreview from './components/PostPreview';
 import AuthorsPreview from './components/AuthorsPreview';
 import GeneralPreview from './components/GeneralPreview';
+import RelationKitchenSinkPostPreview from './components/RelationKitchenSinkPostPreview';
 
 import config from './config.json';
 
@@ -23,6 +24,8 @@ const NetlifyCMS = () => {
     CMS.registerPreviewStyle(previewStyles, { raw: true });
     CMS.registerPreviewTemplate("authors", AuthorsPreview);
     CMS.registerPreviewTemplate("general", GeneralPreview);
+    CMS.registerWidget("relationKitchenSinkPost", "relation", RelationKitchenSinkPostPreview);
+
     CMS.init({config})
   })
 
