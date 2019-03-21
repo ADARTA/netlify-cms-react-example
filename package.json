@@ -9,13 +9,46 @@
     "eject": "echo \"react-scripts eject\""
   },
   "dependencies": {
-    "netlify-cms": "^2.3.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "2.1.2"
+    "@emotion/core": "^10.0.9",
+    "@emotion/styled": "^10.0.9",
+    "@talves/netlify-cms-backend-bitbucket": "2.6.2-beta.7",
+    "@talves/netlify-cms-backend-git-gateway": "2.6.2-beta.7",
+    "@talves/netlify-cms-backend-github": "2.6.2-beta.7",
+    "@talves/netlify-cms-backend-gitlab": "2.6.2-beta.7",
+    "@talves/netlify-cms-backend-test": "2.6.2-beta.7",
+    "@talves/netlify-cms-core": "2.6.2-beta.7",
+    "@talves/netlify-cms-editor-component-image": "2.6.2-beta.7",
+    "@talves/netlify-cms-lib-auth": "2.6.2-beta.7",
+    "@talves/netlify-cms-lib-util": "2.6.2-beta.7",
+    "@talves/netlify-cms-media-library-cloudinary": "2.6.2-beta.7",
+    "@talves/netlify-cms-media-library-uploadcare": "2.6.2-beta.7",
+    "@talves/netlify-cms-ui-default": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-boolean": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-date": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-datetime": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-file": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-image": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-list": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-map": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-markdown": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-number": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-object": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-relation": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-select": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-string": "2.6.2-beta.7",
+    "@talves/netlify-cms-widget-text": "2.6.2-beta.7",
+    "immutable": "^3.7.6",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-immutable-proptypes": "^2.1.0",
+    "react-dom": "^16.8.4",
+    "react-scripts": "^2.1.2",
+    "uuid": "3.3.2"
   },
   "devDependencies": {
-    "netlify-cms-backend-fs": "^0.3.3"
+    "netlify-cms-backend-fs": "^0.4.2"
   },
   "eslintConfig": {
     "extends": "react-app"
