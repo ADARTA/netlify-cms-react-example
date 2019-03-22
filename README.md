@@ -5,17 +5,17 @@
 Create the react app using `create-react-app`
 
 ```bash
-$ npx create-react-app netlify-cms-react-example
+$ git clone https://github.com/ADARTA/netlify-cms-react-example.git
 $ cd netlify-cms-react-example 
 ```
 
-Add dependencies for NetlifyCMS
-
 ```bash
-$ yarn add netlify-cms
+$ yarn start
 ```
 
-Create the the development proxy for the backend api
+**_Note:_** Installing all the libraries are only needed until out of beta, then we will use the new bare library if it is approved. Will then only load the backends needed. 
+
+### Create the the development proxy for the backend api
 
 ```bash
 $ yarn add netlify-cms-backend-fs --dev
