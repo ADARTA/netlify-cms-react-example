@@ -1,30 +1,30 @@
-import * as CMS from '@talves/netlify-cms-core';
+import * as CMS from 'netlify-cms-core';
 /** Backends */
-import { GitHubBackend } from '@talves/netlify-cms-backend-github';
-import { GitLabBackend } from '@talves/netlify-cms-backend-gitlab';
-import { GitGatewayBackend } from '@talves/netlify-cms-backend-git-gateway';
-import { BitbucketBackend } from '@talves/netlify-cms-backend-bitbucket';
-import { TestBackend } from '@talves/netlify-cms-backend-test';
+import { GitHubBackend } from 'netlify-cms-backend-github';
+import { GitLabBackend } from 'netlify-cms-backend-gitlab';
+import { GitGatewayBackend } from 'netlify-cms-backend-git-gateway';
+import { BitbucketBackend } from 'netlify-cms-backend-bitbucket';
+import { TestBackend } from 'netlify-cms-backend-test';
 /** Widgets */
-import * as NetlifyCmsWidgetString from '@talves/netlify-cms-widget-string';
-import * as NetlifyCmsWidgetNumber from '@talves/netlify-cms-widget-number';
-import * as NetlifyCmsWidgetText from '@talves/netlify-cms-widget-text';
-import * as NetlifyCmsWidgetImage from '@talves/netlify-cms-widget-image';
-import * as NetlifyCmsWidgetFile from '@talves/netlify-cms-widget-file';
-import * as NetlifyCmsWidgetDate from '@talves/netlify-cms-widget-date';
-import * as NetlifyCmsWidgetDatetime from '@talves/netlify-cms-widget-datetime';
-import * as NetlifyCmsWidgetSelect from '@talves/netlify-cms-widget-select';
-import * as NetlifyCmsWidgetMarkdown from '@talves/netlify-cms-widget-markdown';
-import * as NetlifyCmsWidgetList from '@talves/netlify-cms-widget-list';
-import * as NetlifyCmsWidgetObject from '@talves/netlify-cms-widget-object';
-import * as NetlifyCmsWidgetRelation from '@talves/netlify-cms-widget-relation';
-import * as NetlifyCmsWidgetBoolean from '@talves/netlify-cms-widget-boolean';
-import * as NetlifyCmsWidgetMap from '@talves/netlify-cms-widget-map';
+import * as NetlifyCmsWidgetString from 'netlify-cms-widget-string';
+import * as NetlifyCmsWidgetNumber from 'netlify-cms-widget-number';
+import * as NetlifyCmsWidgetText from 'netlify-cms-widget-text';
+import * as NetlifyCmsWidgetImage from 'netlify-cms-widget-image';
+import * as NetlifyCmsWidgetFile from 'netlify-cms-widget-file';
+import * as NetlifyCmsWidgetDate from 'netlify-cms-widget-date';
+import * as NetlifyCmsWidgetDatetime from 'netlify-cms-widget-datetime';
+import * as NetlifyCmsWidgetSelect from 'netlify-cms-widget-select';
+import * as NetlifyCmsWidgetMarkdown from 'netlify-cms-widget-markdown';
+import * as NetlifyCmsWidgetList from 'netlify-cms-widget-list';
+import * as NetlifyCmsWidgetObject from 'netlify-cms-widget-object';
+import * as NetlifyCmsWidgetRelation from 'netlify-cms-widget-relation';
+import * as NetlifyCmsWidgetBoolean from 'netlify-cms-widget-boolean';
+import * as NetlifyCmsWidgetMap from 'netlify-cms-widget-map';
 /** MediaLibraries */
-// import uploadcare from '@talves/netlify-cms-media-library-uploadcare';
-// import cloudinary from '@talves/netlify-cms-media-library-cloudinary';
+// import uploadcare from 'netlify-cms-media-library-uploadcare';
+// import cloudinary from 'netlify-cms-media-library-cloudinary';
 /** EditorComponents */
-import image from '@talves/netlify-cms-editor-component-image';
+import image from 'netlify-cms-editor-component-image';
 
 /** Backends */
 CMS.registerBackend('git-gateway', GitGatewayBackend);
