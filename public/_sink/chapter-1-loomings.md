@@ -21,6 +21,9 @@ text: >-
   nearly the same feelings towards the ocean with me.
 number: '111111'
 markdown: >-
+  ![](/assets/uploads/moby-dick.jpg)
+
+
   # Call me Ishmael. Some years ago—never mind how long precisely—having little
   or no money in my purse, and nothing particular to interest me on shore, I
   thought I would sail about a little and see the watery part of the world. It
@@ -57,14 +60,14 @@ markdown: >-
   then is this? Are the green fields gone? What do they here?**
 
 
-  *But look! here come more crowds, pacing straight for the water, and seemingly
+  _But look! here come more crowds, pacing straight for the water, and seemingly
   bound for a dive. Strange! Nothing will content them but the extremest limit
   of the land; loitering under the shady lee of yonder warehouses will not
   suffice. No. They must get just as nigh the water as they possibly can without
   falling in. And there they stand—miles of them—leagues. Inlanders all, they
   come from lanes and alleys, streets and avenues—north, east, south, and west.
   Yet here they all unite. Tell me, does the magnetic virtue of the needles of
-  the compasses of all those ships attract them thither?*
+  the compasses of all those ships attract them thither?_
 
 
   [Once more. Say you are in the country; in some high land of lakes. Take
@@ -164,7 +167,7 @@ markdown: >-
   heard of. On the contrary, passengers themselves must pay. And there is all
   the difference in the world between paying and being paid. The act of paying
   is perhaps the most uncomfortable infliction that the two orchard thieves
-  entailed upon us. But_*being paid*,—what will compare with it? The urbane
+  entailed upon us. But__being paid_,—what will compare with it? The urbane
   activity with which a man receives money is really marvellous, considering
   that we so earnestly believe money to be the root of all earthly ills, and
   that on no account can a monied man enter heaven. Ah! how cheerfully we
@@ -189,7 +192,7 @@ markdown: >-
   must have run something like this:
 
 
-  “*Grand Contested Election for the Presidency of the United States.*_“WHALING
+  “_Grand Contested Election for the Presidency of the United States.__“WHALING
   VOYAGE BY ONE ISHMAEL. “BLOODY BATTLE IN AFFGHANISTAN.”
 
 
@@ -1130,7 +1133,32 @@ list:
       image: /assets/uploads/moby-dick.jpg
       file: /assets/uploads/moby-dick.jpg
       select: b
-      list: []
+      list:
+        - post: Just a Test Post
+          boolean: true
+          text: Testing the Object Text
+          number: 8
+          markdown: Fun stuff
+          datetime: 2019-03-22T04:20:38.545Z
+          date: 2019-03-22T04:20:38.639Z
+          image: /assets/uploads/avatar.png
+          file: /assets/uploads/Photo 1-lobby_FS.jpg
+          select: b
+          object:
+            boolean: true
+            text: 'Testing #2'
+            number: 2341232
+            markdown: |-
+              Testing #2
+
+              ![None](/assets/uploads/Photo 1-lobby_FS.jpg "Picture of a house")
+            datetime: 2019-03-22T04:20:38.742Z
+            date: 2019-03-22T04:20:38.839Z
+            image: /assets/uploads/avatar.png
+            file: /assets/uploads/moby-dick.jpg
+            select: a
+            string: 'Testing #2'
+          string: Testing the Object String
       string: CHAPTER 4. The Counterpane.
     string: CHAPTER 3. The Spouter-Inn.
 typed_list:
