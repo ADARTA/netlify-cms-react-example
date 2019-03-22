@@ -4,6 +4,7 @@
     "repo": "ADARTA/netlify-cms-react-example",
     "branch": "master"
   },
+  "load_config_file": false,
   "display_url": "https://netlify-cms-react-example.netlify.com",
   "media_folder": "public/assets/uploads",
   "public_folder": "/assets/uploads",
