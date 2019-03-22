@@ -1,7 +1,7 @@
 {
   "backend": {
     "name": "github",
-    "repo": "talves/netlify-cms-react-example",
+    "repo": "ADARTA/netlify-cms-react-example",
     "branch": "master"
   },
   "display_url": "https://netlify-cms-react-example.netlify.com",
