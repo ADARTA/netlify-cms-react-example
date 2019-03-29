@@ -9,7 +9,7 @@
     "eject": "echo \"react-scripts eject\""
   },
   "dependencies": {
-    "netlify-cms-app": "2.9.0-beta.0",
+    "netlify-cms-app": "^2.9.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "^2.1.8"
