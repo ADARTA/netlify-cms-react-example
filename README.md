@@ -2,6 +2,8 @@
 
 # netlify-cms-react-example
 
+[![Edit netlify-cms-app Example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/k95z2k616r?fontsize=14)
+
 ## Process to create this example
 
 Create the react app using `create-react-app`
