@@ -1,6 +1,6 @@
 import React from 'react';
 import FileSystemBackend from 'netlify-cms-backend-fs';
-import { NetlifyCmsApp as CMS } from 'netlify-cms-app/dist/esm';
+import CMS from 'netlify-cms-app';
 import previewStyles from './components/previewStyles';
 import PostPreview from './components/PostPreview';
 import AuthorsPreview from './components/AuthorsPreview';
