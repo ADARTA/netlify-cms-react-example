@@ -10,33 +10,36 @@ Create the react app using `create-react-app`
 
 ```bash
 $ git clone https://github.com/ADARTA/netlify-cms-react-example.git
-$ cd netlify-cms-react-example 
+$ cd netlify-cms-react-example
 ```
 
 ```bash
 $ yarn start
 ```
 
-**_Note:_** Installing all the libraries are only needed until out of beta, then we will use the new bare library if it is approved. Will then only load the backends needed. 
-
 ### Create the the development proxy for the backend api
 
 ```bash
-$ yarn add netlify-cms-backend-fs --dev
+$ yarn add netlify-cms-proxy-server --dev
 ```
 
-`src/setupProxy.js` is recognized by the webpack [setup in react-scripts][2], so we use the middleware script from `netlify-cms-backend-fs` to create the `/api` endpoint.
+`src/setupProxy.js` is recognized by the webpack [setup in react-scripts][2], so we use the middleware script from `netlify-cms-proxy-server/dist/middlewares/registerLocalFs` to create the `/api/v1` endpoint.
 
 > Note: this feature is available with react-scripts@2.0.0 and higher.
 
 `src/setupProxy.js`
-```js
-    const fsExpressAPI = require('netlify-cms-backend-fs/dist/fs');
 
-    module.exports = fsExpressAPI;
+```js
+const {
+  registerLocalFs,
+} = require("netlify-cms-proxy-server/dist/middlewares");
+
+module.exports = function (app) {
+  registerLocalFs(app);
+};
 ```
 
-Test the API endpoint by starting the development server using `npm run start` or `yarn start`. The proxy api will give you a message telling you the root and site path in the terminal. Browsing to `http://localhost:3000/api` will confirm the API is up and running by returning a json error object letting you know it is the root of the api.
+Test the API endpoint by starting the development server using `npm run start` or `yarn start`. The proxy api will give you a message telling you the root and site path in the terminal. Browsing to `http://localhost:3000/api/v1` will confirm the API is up and running by returning a json error object letting you know it is the root of the api.
 
 ### Creating your custom CMS application
 

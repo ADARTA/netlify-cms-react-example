@@ -1,4 +1,8 @@
 // https://facebook.github.io/create-react-app/docs/proxying-api-requests-in-development#configuring-the-proxy-manually
-const fsExpressAPI = require('netlify-cms-backend-fs/dist/fs');
+const {
+  registerLocalFs,
+} = require("netlify-cms-proxy-server/dist/middlewares");
 
-module.exports = fsExpressAPI;
+module.exports = function (app) {
+  registerLocalFs(app);
+};
