@@ -44,9 +44,7 @@
           "name": "body",
           "widget": "markdown",
           "hint": "Main content goes here."
-        }
-      ],
-      "meta": [
+        },
         {
           "label": "SEO Description",
           "name": "description",
@@ -85,7 +83,8 @@
           "file": "public/manifest.json",
           "name": "manifest",
           "label": "Site Manifest",
-          "fields": [{
+          "fields": [
+            {
               "name": "name",
               "label": "Application Name",
               "widget": "string"
@@ -120,9 +119,21 @@
               "label": "Icons",
               "widget": "list",
               "fields": [
-                {"name": "src", "label": "Source (src)", "widget": "string"},
-                {"name": "sizes", "label": "Sizes (sizes)", "widget": "string"},
-                {"name": "type", "label": "Type (typep)", "widget": "string"}
+                {
+                  "name": "src",
+                  "label": "Source (src)",
+                  "widget": "string"
+                },
+                {
+                  "name": "sizes",
+                  "label": "Sizes (sizes)",
+                  "widget": "string"
+                },
+                {
+                  "name": "type",
+                  "label": "Type (typep)",
+                  "widget": "string"
+                }
               ]
             }
           ]
